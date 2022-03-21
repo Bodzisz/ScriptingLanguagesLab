@@ -15,6 +15,12 @@ def writeLines(filepath):
     except:
         writeLines(getFilePath())
 
+def printFileLines(path):
+    print("FILE CONTENT: ")
+    with open(path, 'r') as file: 
+        for line in file:
+            print(line)
+
 
 line1 = "Kacper"
 line2 = "Wojcicki"
@@ -24,8 +30,4 @@ site = input("Enter your fav website: ")
 filePath = getFilePath()
 
 writeLines(filePath)
-
-print("FILE CONTENT: ")
-with open(filePath, 'r') as file: 
-    for line in file:
-        print(line)
+printFileLines(filePath)

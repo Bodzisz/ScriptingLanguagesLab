@@ -1,8 +1,12 @@
-users = {"1234": 1500, "4321": 15000, "2137": 123000}
+users = {1234: 1500, 4321: 15000, 2137: 123000}
 
 
 def logIn():
-    return input("Enter PIN: ")
+    try:
+        return int(input("Enter PIN: "))
+    except ValueError as e:
+        print('You need to enter an integer number.', e)
+        return logIn()
 
 
 def takeChoiceInput():
