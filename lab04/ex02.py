@@ -7,7 +7,7 @@ class Student:
     def __init__(self, name, index, age):
         self.setName(name)
         self.index = index
-        self.setAge(age)
+        self.age = age
 
     def age(self):
         return self.age
@@ -15,21 +15,15 @@ class Student:
     def print(self):
         print('{n:20s} {index:20s} {a: 2d}'.format(n=self.name, index=self.index, a=self.age))
 
-    @setPrinter
     def setName(self, name):
-        if isinstance(name, string):
+        if isinstance(name, str):
             self.name = name
         else:
             raise TypeError("Name must be string type")
 
-    def setPrinter(self):
-        print("Setting value ...")
-
-    @setPrinter
     def setIndex(self, index):
         self.index = index
 
-    @setPrinter
     def setAge(self, age):
         if isinstance(age, int):
             if age > 0:
@@ -39,10 +33,11 @@ class Student:
         else:
             raise TypeError("Age must be integer type")
 
-    def delPrice(self):
-        del price
+    def delAge(self):
+        del self.age
 
-    age = property(fget=age, fset=setAge, fdel= delPrice, doc = 'Student age.')
+    age = property(fget=age, fset=setAge, fdel= delAge, doc = 'Student age.')
+
 
 
 student1 = Student("Kacper", "260388", 20)
