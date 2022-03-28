@@ -1,25 +1,48 @@
+import string
+
+
 class Student:
     university = "PWR"
 
     def __init__(self, name, index, age):
-        self.name = name
+        self.setName(name)
         self.index = index
-        self.age = age
+        self.setAge(age)
+
+    def age(self):
+        return self.age
 
     def print(self):
         print('{n:20s} {index:20s} {a: 2d}'.format(n=self.name, index=self.index, a=self.age))
 
+    @setPrinter
     def setName(self, name):
-        self.name = name
+        if isinstance(name, string):
+            self.name = name
+        else:
+            raise TypeError("Name must be string type")
 
+    def setPrinter(self):
+        print("Setting value ...")
+
+    @setPrinter
     def setIndex(self, index):
         self.index = index
 
+    @setPrinter
     def setAge(self, age):
-        if age > 0:
-            self.age = age
+        if isinstance(age, int):
+            if age > 0:
+                self.age = age
+            else:
+                raise ValueError("Age must be positive number")
         else:
-            print("Wrong age value!")
+            raise TypeError("Age must be integer type")
+
+    def delPrice(self):
+        del price
+
+    age = property(fget=age, fset=setAge, fdel= delPrice, doc = 'Student age.')
 
 
 student1 = Student("Kacper", "260388", 20)
