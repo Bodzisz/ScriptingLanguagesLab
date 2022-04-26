@@ -36,6 +36,7 @@ def timeit(method):
             kw['log_time'][name] = int((te - ts) * 1000)
         else:
             print('%r  %2.4f ms' % (method.__name__, (te - ts) * 1000))
+            print(result)
         return result
     return timed
 
@@ -72,9 +73,9 @@ def for_date_c(year, month, day):
     return deaths, cases
 
 print("#2")
-print(for_date_a(2020, 11, 25))
-print(for_date_b(2020, 11, 25))
-print(for_date_c(2020, 11, 25))
+for_date_a(2020, 11, 25)
+for_date_b(2020, 11, 25)
+for_date_c(2020, 11, 25)
 
 # 3
 @timeit
@@ -108,9 +109,9 @@ def for_country_c(country):
     return deaths, cases
 
 print("\n#3")
-print(for_country_a('Afghanistan'))
-print(for_country_b('Afghanistan'))
-print(for_country_c('Afghanistan'))
+for_country_a('Afghanistan')
+for_country_b('Afghanistan')
+for_country_c('Afghanistan')
 
 # 4
 @timeit
@@ -147,6 +148,6 @@ def for_date_country_c(year, month, day, country):
 
 
 print("\n#4")
-print(for_date_country_a(2020, 11, 25, 'Afghanistan'))
-print(for_date_country_b(2020, 11, 25, 'Afghanistan'))
-print(for_date_country_c(2020, 11, 25, 'Afghanistan'))
+for_date_country_a(2020, 11, 25, 'Afghanistan')
+for_date_country_b(2020, 11, 25, 'Afghanistan')
+for_date_country_c(2020, 11, 25, 'Afghanistan')
