@@ -10,7 +10,7 @@ class bcolors:
 class PersonTester:
 
     def run_tests():
-        with open(r"ex06_data.txt", 'r', encoding="utf-8") as file:
+        with open(r"lab08\ex06_data.txt", 'r', encoding="utf-8") as file:
             for line in file:
                 try:
                     ex05.Person.fromString(line)

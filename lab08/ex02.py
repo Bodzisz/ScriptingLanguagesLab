@@ -24,7 +24,7 @@ class First_name(ex01.Controlled_text):
 
     @classmethod
     def loadAvailableNames(cls):
-        with open(r"C:\Users\kacpe\University\PD8Siem-1 (1)\PopularneImiona.txt", 'r', encoding="utf-8") as file:
+        with open(r"lab08\PopularneImiona.txt", 'r', encoding="utf-8") as file:
                 for line in file.readlines():
                     line = line.strip()
                     if line != "Kobiety" and line != "Mężczyźni":
