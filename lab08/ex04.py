@@ -18,8 +18,6 @@ class Ident_number(ex01.Controlled_text):
 
             for number in value[:7]:
                 firstSevenDigits += int(number)
-            # print(firstSevenDigits)
-            # print(lastTwoDigits & 97)
             if firstSevenDigits == lastTwoDigits % 97:
                 self._num = value
             else:

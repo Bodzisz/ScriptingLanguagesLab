@@ -14,9 +14,9 @@ class PersonTester:
             for line in file:
                 try:
                     ex05.Person.fromString(line)
-                    print('{0:50s}           {1:30s}'.format(line[:len(line) - 1], bcolors.OK + "        OK" + bcolors.ENDC))
+                    print('{0:50s} {1:30s}'.format(line[:len(line) - 1], bcolors.OK + "        OK" + bcolors.ENDC))
                 except Exception as e:
-                    print('{0:50s}           {1:30s}          {2:30s}'.format(line[:len(line) - 1], bcolors.FAIL + "        FAILED       " + bcolors.ENDC, str(e)))
+                    print('{0:50s} {1:30s} {2:30s}'.format(line[:len(line) - 1], bcolors.FAIL + "        FAILED       " + bcolors.ENDC, str(e)))
 
 
 PersonTester.run_tests()
